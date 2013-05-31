@@ -74,8 +74,8 @@ def boxy_O (turtle, ht, wd):
 	fd (bob, wd)
 
 ht = 100
-wd = 30
-space = 15
+wd = 35
+space = 20
 
 
 
@@ -89,8 +89,9 @@ white_space (bob, space)
 L (bob, ht, wd)
 white_space (bob, space)
 boxy_O (bob, ht, wd)
-
-
+pu (bob)
+fwd_lft (bob, ht)
+fd (bob, wd)
 
 
 
