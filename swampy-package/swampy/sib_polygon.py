@@ -116,14 +116,45 @@ def new_arc(turtle, r, arc_angle):
 	poly_draw (turtle, n_sides, segment_length, turn_angle)
 
 
+#	********************************************************************
+#	--------------------------------------------------------------------
+#	The following set of functions move the turtle before or after
+#	calling the circle and arc functions.  The ready_to_draw() functions 
+#	draw radius lines and position the turtle for drawing the figures. 
+#	The return_to_origin() function return the turtle to the origin
+#	and to it's starting angle.
+#	--------------------------------------------------------------------
+#	
+def ready_to_draw_circle (turtle,r):
+	"""Draws radius and positions turtle to draw circle."""
+	turtle.delay =0.01
+	bk (turtle, radius)			# draws radius
+	rt (turtle)					# positions turtle facing down
+
+def ready_to_draw_arc (turtle, r, angle):
+	"""Draws radius and positions turtle to draw arc."""
+	turtle.delay = 0.1
+	rt (turtle, angle)			# turns turtle to starting angle
+	bk (turtle, r)				# draws radius
+	rt (turtle)					# positions turtle facing down
+
+def return_to_origin (turtle, r):
+	"""Draws radius back towards origin and positions
+	turtle for new instructions."""
+	lt (turtle)					# points turtle towards origin
+	fd (turtle, r)				# moves turtle to origin
+#	
+#	********************************************************************
+
+
 
 # ******************
 # ** Main Program **
 # ******************
-length = 30
-sides = 3
+length = 75
+sides = 8
 radius = 100
-theta = 5
+theta = 60
 
 square (bob)
 world.clear()
@@ -134,47 +165,29 @@ world.clear()
 polygon (bob, sides, length)
 world.clear()
 
-bob.delay =0.01
-bk (bob, radius)			# draws radius
-rt (bob)					# positions bob facing down
+ready_to_draw_circle(bob, radius)				
 circle(bob, radius)
-lt (bob)					# points bob towards origin
-fd (bob, radius) 			# moves bob to origin
+return_to_origin(bob, radius)
 world.clear()
 
-bob.delay = 0.1
-rt (bob, theta)				# turns bob to starting theta
-bk (bob, radius)			# draws radius
-rt (bob)					# positions bob facing down
+ready_to_draw_arc (bob, radius, theta)
 arc (bob, radius, theta)	
-lt (bob)					# points bob towards origin
-fd (bob, radius)			# moves bob to origin
+return_to_origin(bob, radius)
 world.clear()
 
 new_polygon (bob, sides, length)
 world.clear()
 
-bob.delay = 0.01
-bk (bob, radius)			# draws radius
-rt (bob)					# positions bob facing down
+ready_to_draw_circle(bob, radius)				
 new_circle(bob, radius)
-lt (bob)					# points bob towards origin
-fd (bob, radius) 			# moves bob to origin
+return_to_origin(bob, radius)
 world.clear()
 
-bob.delay = 0.1
-rt (bob, theta)				# turns bob to starting theta
-bk (bob, radius)			# draws radius
-rt (bob)					# positions bob facing down
+ready_to_draw_arc (bob, radius, theta)
 new_arc (bob, radius, theta)	
-lt (bob)					# points bob towards origin
-fd (bob, radius)			# moves bob to origin
-world.clear()
-
-
+return_to_origin(bob, radius)
 
 print "Radius = ", radius
 print "Circumference =", 2*math.pi*radius
-
 
 wait_for_user()					
