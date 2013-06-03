@@ -1,6 +1,6 @@
 # Hello excercise from Week 0
 
-# Name:
+# Name:Lisa-Maria
 
 
 from TurtleWorld import * 		
@@ -11,9 +11,17 @@ bob = Turtle()
 
 # This is where you put code to move bob
 
-
+# ****************
+# ** Exercise 1 **
+# ****************
+#	Swampy HELLO
+#	------------
 world.clear()
 bob = Turtle()
+
+#	------------------
+# 	Movement Functions
+# 	------------------
 
 def fwd_lft (turtle, n):
 	fd (turtle, n)
@@ -40,7 +48,10 @@ def start (turtle, st_position):
 	bk (turtle, st_position)
 	lt (turtle)
 
-## H ##
+
+#	---------------------------
+#	Individual Letter Functions
+#	---------------------------
 def H (turtle, ht, wd):
 	pd (turtle)
 	fd (turtle, ht)
@@ -55,8 +66,8 @@ def E (turtle, ht, wd):
 	fd (turtle, wd)
 	backwd_rt (turtle, wd)
 	fwd_lft (turtle, ht*0.5)
-	fd (turtle, wd)
-	backwd_rt (turtle,wd)
+	fd (turtle, wd*0.6)
+	backwd_rt (turtle,wd*0.6)
 	fwd_lft (turtle, ht*0.5)
 	fd (turtle, wd)
 
@@ -73,12 +84,16 @@ def boxy_O (turtle, ht, wd):
 	fwd_rt (bob, ht)
 	fd (bob, wd)
 
+# -----------------
+# Setting variables
+# -----------------
 ht = 100
 wd = 35
 space = 20
 
-
-
+# ------------
+# Main Program
+#-------------
 start (bob, 150)
 H(bob, ht, wd)
 white_space (bob, space)
