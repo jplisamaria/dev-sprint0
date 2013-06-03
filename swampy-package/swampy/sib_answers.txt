@@ -1,6 +1,6 @@
 # Text answers from Week 0
 
-# Name:
+# Name: Lisa-Maria Mehta
 
 
 
@@ -12,34 +12,43 @@ Explain what each of the following lines does. Use the terminology you learned f
 	wait_for_user()
 
 Answer:
-
-
-
-
+	from TurtleWorld import *
+		This means that everything is imported from the Turtleworld module, and you can use anything defined inside Turtleworld as if if was defined in your progeram
+	world = TurtleWorld()
+		Creates a TurtleWorld assigned to world.
+	bob = Turtle()
+		Creates a Turtle assigned to bob
+	wait_for_user()
+		Tells the TurtleWorld to wait for the user to do something.
 
 
 These questions pertain to the program you wrote in Week0.
 
 -- What are the arguments of polygon()?  What type is each argument?
-Answer:
+Answer: 
+			t = the turtle is type <class 'TurtleWorld.Turtle'>.
+			n = the number of sides and is  <type 'int'>.
+			l = the length of each side and is <type 'float'>.
 
 -- What two turtle functions did you use to draw the sides of the polygon?
 Answer:
+			fd() and lt()
 
 -- What are the arguments for polyline?  What type is each argument?
 Answer:
-
-
-
-
+			t = the turtle is type <class 'TurtleWorld.Turtle'>.
+			n = the number of line segments and is  <type 'int'>.
+			l = the length of each segment and is <type 'float'>.
+			angle = the angle in degrees that the turtle turns at each line 
+			segment, and is <type 'float'>.
 
 Suppose you wrote a function, center_circle(), that draws a circle of a given radius around the current location of the turtle and restores the turtle to its starting point.
 
 -- What turtle functions would you use to move the turtle from the center to the edge of the circle and get ready to call the original circle() function?
-Answer:
+Answer: pu (), bk(), rt(), and pd() 
 
 -- Suppose the interface of this function requires the turtle to end up in the same place it started, facing in the same direction it started.
-Answer:
+Answer: pu(), rt(), and fd()
 
 -- What is this type of requirement called?
-Answer:
+Answer: postconditions
